@@ -17,23 +17,21 @@ const FullCalendar = () => {
     calendarApi.changeView('timeGridDay', arg.dateStr);
   };
 
-  const click = (valores) =>{
+  const click = (valores) => {
     // console.log(valores);
     // alert(valores.start)
 
-   
 
-   
-//    alert("Funcionou!!")
+
+
+    //    alert("Funcionou!!")
   }
 
   useEffect(() => {
     const calendar = new Calendar(calendarRef.current, {
-      
-      
-      
-
-      plugins: [dayGridPlugin, interactionPlugin,timeGridPlugin],
+      locale: ptLocace,
+      timeZone: 'local',
+      plugins: [dayGridPlugin, interactionPlugin, timeGridPlugin],
       initialView: 'dayGridMonth',
       headerToolbar: {
         left: 'dayGridMonth,timeGridWeek,timeGridDay', // botoes mês semana e dia
@@ -41,6 +39,10 @@ const FullCalendar = () => {
         end: 'today prev,next' // botao de proximo mes
       },
 
+      events: [
+        { title: 'Churrasco de japones', start: '2024-05-25T09:00:00', end: '2024-05-25T14:00:00', backgroundColor: '#FF9D00', textColor: '#000' },
+        { title: 'aniversario do nei', date: '2024-05-10' }
+      ],
 
       // selectable: true,
       // select: click,
@@ -48,15 +50,6 @@ const FullCalendar = () => {
       // dayMaxEvents: true,
       // editable: true,
       // droppable: true, // this allows things to be dropped onto the calendar!!!
-    
-      locale: ptLocace,
-      
-
-      events: [
-        { title: 'Churrasco de japones', start: '2024-05-25T09:00:00', end: '2024-05-25T14:00:00', backgroundColor: '#FF9D00', textColor: '#000'},
-        { title: 'aniversario do nei', date: '2024-05-10' }
-      ],
-
 
     });
 
