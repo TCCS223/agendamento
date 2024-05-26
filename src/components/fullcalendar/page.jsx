@@ -6,10 +6,16 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import ModalCreate from '../modal';
-import ptLocace from '@fullcalendar/core/locales/pt-br'
+import ptLocace from '@fullcalendar/core/locales/pt-br';
+import styles from './page.module.css';
 
 const FullCalendar = () => {
   const calendarRef = useRef(null);
+
+  const handleDateClick = (arg) => {
+    const calendarApi = calendarRef.current.getApi();
+    calendarApi.changeView('timeGridDay', arg.dateStr);
+  };
 
   const click = (valores) =>{
     // console.log(valores);
@@ -23,17 +29,21 @@ const FullCalendar = () => {
 
   useEffect(() => {
     const calendar = new Calendar(calendarRef.current, {
+      
+      
+      
 
       plugins: [dayGridPlugin, interactionPlugin,timeGridPlugin],
       initialView: 'dayGridMonth',
       headerToolbar: {
-        left: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek',
-        center: 'title',
-        
+        left: 'dayGridMonth,timeGridWeek,timeGridDay', // botoes mês semana e dia
+        center: 'title', // titulo (mês)
+        end: 'today prev,next' // botao de proximo mes
       },
 
-      selectable: true,
-      select: click,
+
+      // selectable: true,
+      // select: click,
       // selectMirror: true,
       // dayMaxEvents: true,
       // editable: true,
@@ -43,7 +53,7 @@ const FullCalendar = () => {
       
 
       events: [
-        { title: 'Churrasco de japones', date: '2024-05-02' },
+        { title: 'Churrasco de japones', start: '2024-05-25T09:00:00', end: '2024-05-25T14:00:00', backgroundColor: '#FF9D00', textColor: '#000'},
         { title: 'aniversario do nei', date: '2024-05-10' }
       ],
 
