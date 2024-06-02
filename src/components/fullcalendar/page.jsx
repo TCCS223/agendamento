@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useRef, useEffect, useState } from 'react';
@@ -12,9 +11,11 @@ import styles from './page.module.css';
 const FullCalendar = () => {
   const calendarRef = useRef(null);
   const [events, setEvents] = useState([
-    { id: '1', title: 'Churrasco de japones', start: '2024-05-25T09:00:00', end: '2024-05-25T14:00:00', backgroundColor: '#FF9D00', textColor: '#000' },
-    { id: '2', title: 'Aniversário do Gabrielelel', start: '2024-05-10' }
+    { id: '1', title: 'Churrasco de japones', start: '2024-05-25T09:00:00', end: '2024-05-25T14:00:00', backgroundColor: '#FF9D00', textColor: '#000', savedAt: new Date().toISOString() },
+    { id: '2', title: 'Aniversário do Gabrielelel', start: '2024-05-10', savedAt: new Date().toISOString() }
   ]);
+  const [selectedEvent, setSelectedEvent] = useState(null);
+  const [showModal, setShowModal] = useState(false);
 
   const handleDateClick = (arg) => {
     const title = prompt('Digite o título do evento:');
@@ -23,30 +24,38 @@ const FullCalendar = () => {
         id: String(events.length + 1), // Gera um ID único
         title: title,
         start: arg.date,
-        allDay: true
+        allDay: true,
+        savedAt: new Date().toISOString()
       };
       setEvents([...events, newEvent]);
     }
   };
 
-  const handleEditClick = (info) => {
-    const eventId = info.event.id;
-    const eventTitle = info.event.title;
+  const handleEventClick = (info) => {
+    setSelectedEvent(info.event);
+    setShowModal(true);
+  };
+
+  const handleEditClick = () => {
+    const eventId = selectedEvent.id;
+    const eventTitle = selectedEvent.title;
     const newTitle = prompt('Digite o novo título do evento:', eventTitle);
     if (newTitle) {
       const updatedEvents = events.map(event =>
-        event.id === eventId ? { ...event, title: newTitle } : event
+        event.id === eventId ? { ...event, title: newTitle, savedAt: new Date().toISOString() } : event
       );
       setEvents(updatedEvents);
+      setShowModal(false);
     }
   };
 
-  const handleDeleteClick = (info) => {
-    const eventId = info.event.id;
-    const eventTitle = info.event.title;
+  const handleDeleteClick = () => {
+    const eventId = selectedEvent.id;
+    const eventTitle = selectedEvent.title;
     if (window.confirm(`Tem certeza que deseja deletar o evento "${eventTitle}"?`)) {
       const updatedEvents = events.filter(event => event.id !== eventId);
       setEvents(updatedEvents);
+      setShowModal(false);
     }
   };
 
@@ -64,21 +73,7 @@ const FullCalendar = () => {
       },
       events: events,
       dateClick: handleDateClick,
-      eventContent: (arg) => {
-        const containerEl = document.createElement('div');
-        const editButton = document.createElement('button');
-        editButton.innerHTML = 'Editar';
-        editButton.onclick = () => handleEditClick(arg);
-        const deleteButton = document.createElement('button');
-        deleteButton.innerHTML = 'Excluir';
-        deleteButton.onclick = () => handleDeleteClick(arg);
-        containerEl.appendChild(editButton);
-        containerEl.appendChild(deleteButton);
-        const titleEl = document.createElement('div');
-        titleEl.innerText = arg.event.title;
-        containerEl.appendChild(titleEl);
-        return { domNodes: [containerEl] };
-      }
+      eventClick: handleEventClick,
     });
 
     calendar.render();
@@ -89,7 +84,22 @@ const FullCalendar = () => {
   }, [events]);
 
   return (
-    <div ref={calendarRef} className={styles.calendar}></div>
+    <div>
+      <div ref={calendarRef} className={styles.calendar}></div>
+      {showModal && (
+        <div className={styles.modal}>
+          <div className={styles.modalContent}>
+            <h2>{selectedEvent.title}</h2>
+            <p>Início: {new Date(selectedEvent.start).toLocaleString()}</p>
+            {selectedEvent.end && <p>Fim: {new Date(selectedEvent.end).toLocaleString()}</p>}
+            <p>Salvo em: {new Date(selectedEvent.extendedProps.savedAt).toLocaleString()}</p>
+            <button onClick={handleEditClick}>Editar</button>
+            <button onClick={handleDeleteClick}>Excluir</button>
+            <button onClick={() => setShowModal(false)}>Fechar</button>
+          </div>
+        </div>
+      )}
+    </div>
   );
 };
 
