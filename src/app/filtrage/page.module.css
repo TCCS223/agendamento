@@ -1,0 +1,188 @@
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 50px;
+    font-size: 25px;
+    background-color: red;
+}
+
+.modal{
+    height: 600px;
+    width: 70%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #000;
+    border-radius: 35px;
+    align-items: center;
+}
+
+.body{
+    margin: auto 10px;
+    text-align: justify;
+    background-color: green;
+    font-size: 18px;
+    line-height: 25px;
+    display: flex;
+    padding: 10px;
+    width: 70%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.fieldset{
+    display: flex;
+    flex-direction: column;
+}
+
+.label{
+    font-size: 20px;
+    padding: 10px;
+}
+
+.input{
+    padding: 15px;
+    font-size: 20px;
+}
+
+.button{
+    padding: 15px 30px;
+    margin: 10px;
+}
+
+
+.fechar{
+    background-color: transparent;
+    
+}
+.confirmar{
+    background-color: rgb(9, 255, 5);
+}
+
+.corpo{
+    display: flex;
+    width: 100%;
+    height: auto;
+}
+
+/* .estiliza{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: blueviolet;
+} */
+
+
+
+
+
+.radiogroup{
+    width: 100%;
+    height: 20%;
+    justify-content: space-between;
+    background-color: grey;
+    flex-direction: row;
+    display: flex;
+}
+
+.opPesquisa{
+    width: 40%;
+    background-color: pink;
+    height: 100%;
+    border-radius: 15px;
+}
+
+.filtro, .situacao{
+    width: 20%;
+    background-color: yellowgreen;
+    height: 100%;
+    border-radius: 15px;
+}
+
+/* .situacao{
+    width: 20%;
+    background-color: yellowgreen;
+    height: 100%;
+    border-radius: 15px;
+} */
+
+.pesquisar{
+    width: 100%;
+    height: 13%;
+    background-color: grey;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.barpesquisa{
+    width: 35%;
+    border: transparent;
+}
+
+.botaopesquisa{
+    display: flex;
+    width: 15%;
+    /* height: 60%; */
+    background-color: #FF9D00;
+
+}
+
+.botaopesquisa, .barpesquisa{
+    height: 60%;
+    border-radius: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.resultado{
+    width: 100%;
+    height: 60%;
+    background-color: grey;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

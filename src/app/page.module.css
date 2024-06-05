@@ -1,0 +1,103 @@
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 50px;
+    font-size: 25px;
+    background-color: red;
+}
+
+.modal{
+    height: 600px;
+    width: 450px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #000;
+    border-radius: 35px;
+    align-items: center;
+}
+
+.body{
+    margin: auto 10px;
+    text-align: justify;
+    background-color: red;
+    font-size: 18px;
+    line-height: 25px;
+    padding: 10px;
+}
+
+.fieldset{
+    display: flex;
+    flex-direction: column;
+}
+
+.label{
+    font-size: 20px;
+    padding: 10px;
+}
+
+.input{
+    padding: 15px;
+    font-size: 20px;
+}
+
+.button{
+    padding: 15px 30px;
+    margin: 10px;
+}
+
+
+.fechar{
+    background-color: transparent;
+    
+}
+.confirmar{
+    background-color: rgb(9, 255, 5);
+}
+
+
+
+
+
+
+
+
+
+
+.coorpo{
+    width: 80%;
+    display: flex;
+    background-color: blue;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

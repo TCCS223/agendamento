@@ -3,46 +3,58 @@
 import React from "react";
 import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure } from "@nextui-org/react";
 import styles from './page.module.css'
-import Link from "next/link";
-import modal from "./filtrage/page.jsx";
 
-export default function App() {
+export default function modal() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   return (
-    <>
-    <div className={styles.coorpo}>
+    <div className={styles.corpo}>
       <Button onPress={onOpen}>Open Modal</Button>
-     
-      <Link href="/filtrage">pesquisars</Link> 
+
 
       <Modal isOpen={isOpen} onOpenChange={onOpenChange} isDismissable={false} isKeyboardDismissDisabled={true} className={styles.modal}>
         <ModalContent>
           {(onClose) => (
             <>
-              
 
               <ModalHeader className={styles.header}>Modal Title</ModalHeader>
               <ModalBody className={styles.body}>
-                <fieldset className={styles.fieldset}>
-                  <label htmlFor="" className={styles.label}>NOME</label>
-                  <input type="text" className={styles.input} required />
+                <fieldset className={styles.radiogroup}>
+                  <fieldset className={styles.opPesquisa}>
+                  <label htmlFor="" className={styles.label}>Pesquisar por</label>
+
+                  <fieldset>
+                  <input type="radio"  />
+                  <label >Meio termo</label> 
+                  </fieldset>
+                  </fieldset>
+
+
+                  <fieldset className={styles.filtro}>
+                  <label htmlFor="" className={styles.label}>Pesquisar por</label>
+                  </fieldset>
+
+                  <fieldset className={styles.situacao}>
+                  <label htmlFor="" className={styles.label}>Pesquisar por</label>
+                  </fieldset>
+                  {/* <input type="text" className={styles.input} required /> */}
                 </fieldset>
 
-                <fieldset className={styles.fieldset}>
-                  <label htmlFor="" className={styles.label}>TELEFONE</label>
-                  <input type="text" className={styles.input} required/>
+                <fieldset className={styles.pesquisar}>
+                  <input className={styles.barpesquisa} type="text" placeholder="Digite........."/>
+                  <button className={styles.botaopesquisa}>Pesquisar</button>
                 </fieldset>
 
-                <fieldset className={styles.fieldset}>
-                  <label htmlFor="" className={styles.label}>EMAIL</label>
-                  <input type="text" className={styles.input} required/>
+                <fieldset className={styles.resultado}>
+                  
                 </fieldset>
+
                 
-                <fieldset className={styles.fieldset}>
-                  <label htmlFor="" className={styles.label}>SENHA</label>
-                  <input type="password" className={styles.input} required/>
-                </fieldset>
+                
+                
+
+
+
 
                 
               </ModalBody>
@@ -58,7 +70,6 @@ export default function App() {
           )}
         </ModalContent>
       </Modal>
-      </div>
-    </>
+    </div>
   );
 }
