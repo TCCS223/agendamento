@@ -4,6 +4,9 @@ import styles from './page.module.css';
 
 import React from "react";
 
+import Link from "next/link";
+import modal from "./filtrage/page.jsx";
+
 import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure } from "@nextui-org/react";
 
 export default function CadCliente() {
@@ -28,6 +31,8 @@ const handleOpen = (backdrop) =>{
                 {/* <button id="localizarCliente" onclick={onOpen}>Localizar</button> */}
                 <button id="localizarCliente" onclick={() => { isOpen }}>Localizar</button>
             </div>
+
+            <Link href="/filtrage">pesquisars</Link> 
 
             <form id="clienteForm" className={styles.form}>
 

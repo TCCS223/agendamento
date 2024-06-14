@@ -22,12 +22,38 @@ export default function modal() {
                 <fieldset className={styles.radiogroup}>
                   <fieldset className={styles.opPesquisa}>
                   <label htmlFor="" className={styles.label}>Pesquisar por</label>
-
-                  <fieldset>
+                  <table border="1">
+                      <tr>
+                          <td>Coluna 1, Linha 1</td>
+                          <td>Coluna 2, Linha 1</td>
+                      </tr>
+                      <tr>
+                          <td>Coluna 1, Linha 2</td>
+                          <td>Coluna 2, Linha 2</td>
+                      </tr>
+                  </table>
+                  </fieldset>
+                  <fieldset className={styles.grupobolinha}>
+                  {/* <table border="1">
+                      <tr>
+                          <td>Coluna 1, Linha 1</td>
+                          <td>Coluna 2, Linha 1</td>
+                      </tr>
+                      <tr>
+                          <td>Coluna 1, Linha 2</td>
+                          <td>Coluna 2, Linha 2</td>
+                      </tr>
+                  </table> */}
+                  {/* <input type="radio"  />
+                  <label >Meio termo</label> 
                   <input type="radio"  />
                   <label >Meio termo</label> 
+                  <input type="radio"  />
+                  <label >Meio termo</label>
+                  <input type="radio"  />
+                  <label >Meio termo</label>  */}
                   </fieldset>
-                  </fieldset>
+                  
 
 
                   <fieldset className={styles.filtro}>
