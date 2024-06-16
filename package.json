@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
     "@fullcalendar/core": "^6.1.13",
     "@fullcalendar/daygrid": "^6.1.13",
     "@fullcalendar/interaction": "^6.1.13",
@@ -16,11 +19,16 @@
     "@fullcalendar/timegrid": "^6.1.13",
     "@nextui-org/modal": "^2.0.35",
     "@nextui-org/react": "^2.4.1",
+    "framer-motion": "^11.2.10",
     "fullcalendar": "^6.1.13",
     "jquery": "^3.7.1",
     "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18",
-    "react-modal": "^3.16.1"
+    "react-modal": "^3.16.1",
+    "sweetalert2": "^11.11.1"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.4"
   }
 }

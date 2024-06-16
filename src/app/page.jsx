@@ -1,38 +1,93 @@
 'use client';
 
+import Swal from 'sweetalert2';
+
 import styles from './page.module.css';
 
 import React from "react";
 
 import Link from "next/link";
 import modal from "./filtrage/page.jsx";
+import { background, filter } from '@chakra-ui/react';
 
-import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure } from "@nextui-org/react";
+// import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure } from "@nextui-org/react";
+// import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, CloseButton, Button, useDisclosure} from "@nextui-org/react";
 
 export default function CadCliente() {
+    const Pesquisar = () => {
+        Swal.fire({
+            width: 1200,
+            title: 'Error!',
+            text: 'Do you want to continue',
+            icon: 'error',
+            confirmButtonText: 'ok',
+            html:
+                '<input id="swal-input1">' +
+                '<input id="swal-input2" >',
+            input: "email",
+            inputLabel: "Your email address",
+            inputPlaceholder: "Enter your email address",
+            showCloseButton: "true",
+            backdrop: `
+    rgba(0,0,0,0.8)   
+    `,
+            customClass: {
+                filter: 'my-swal'
+            }
 
-    const { isOpen, onOpen, onOpenChange } = useDisclosure();
-    const [backdrop, setBackdrop] = React.useState('opaque');
 
-const backdrops = ["opaque","blur","transparent"];
+        });
+    }
 
-const handleOpen = (backdrop) =>{
-  setBackdrop(backdrop)
-  onOpen();
-}
+    const Novo = () => {
+        Swal.fire({
+            width: 1200,
+            title: 'Error!',
+            text: 'Do you want to continue',
+            icon: 'error',
+            confirmButtonText: 'ok',
+            html:
+                '<input id="swal-input1">' +
+                '<input id="swal-input2" >',
+            input: "email",
+            inputLabel: "Your email address",
+            inputPlaceholder: "Enter your email address",
+            showCloseButton: "true",
+            backdrop: `
+        rgba(56,79,126,0.8)   
+        `,
+            customClass: {
+                filter: 'my-swal'
+            }
+
+
+        });
+    }
+    //     const { isOpen, onOpen, onOpenChange } = useDisclosure();
+    //     const [backdrop, setBackdrop] = React.useState('opaque');
+
+    // const backdrops = ["opaque","blur","transparent"];
+
+    // const handleOpen = (backdrop) =>{
+    //   setBackdrop(backdrop)
+    //   onOpen();
+    // }
 
     return (
+
+
         <div id="clientes" className={`${styles.content_section}`}>
             <h2>Gerenciamento de Clientes</h2>
             <div className={styles.button_group}>
-                <button id="novoCliente">Novo</button>
+                <button id="novoCliente" onClick={Novo}>Novo</button>
                 <button id="alterarCliente">Alterar</button>
                 <button id="excluirCliente">Excluir</button>
                 {/* <button id="localizarCliente" onclick={onOpen}>Localizar</button> */}
-                <button id="localizarCliente" onclick={() => { isOpen }}>Localizar</button>
+                <button id="localizarCliente" onClick={Pesquisar}>Localizar</button>
             </div>
 
-            <Link href="/filtrage">pesquisars</Link> 
+            <Link href="/filtrage">pesquisars</Link>
+
 
             <form id="clienteForm" className={styles.form}>
 
@@ -78,7 +133,7 @@ const handleOpen = (backdrop) =>{
                         <option value="admin" className={styles.option}>Administrador</option>
                     </select>
                 </div>
-                
+
 
                 <div className={`${styles.grid_item} ${styles.grid_item_small}`}>
                     <label for="telefone_cliente" className={styles.label_cliente}>Telefone:</label>
@@ -102,64 +157,10 @@ const handleOpen = (backdrop) =>{
 
             {/* MODAL */}
 
-            <Button onPress={onOpen}>Open Modal</Button>
-            <>
-            <div className="flex flex-wrap gap-3">
-        {backdrops.map((b) => (
-          <Button  
-            key={b}
-            variant="flat" 
-            color="warning" 
-            onPress={() => handleOpen(b)}
-            className="capitalize"
-          >
-           {b}
-          </Button>
-        ))}  
-      </div>
-
-                <Modal backdrop={backdrop} isOpen={isOpen} onOpenChange={onOpenChange} isDismissable={false} isKeyboardDismissDisabled={true} className={styles.modal}>
-                    <ModalContent className={styles.modal_content}>
-                        {(onClose) => (
-                            <>
-
-                                <ModalHeader className={styles.header_modal}>Modal Title</ModalHeader>
-                                <ModalBody className={styles.body_modal}>
-                                    {/* <fieldset className={styles.fieldset}>
-                                        <label htmlFor="" className={styles.label}>NOME</label>
-                                        <input type="text" className={styles.input} required />
-                                    </fieldset>
-
-                                    <fieldset className={styles.fieldset}>
-                                        <label htmlFor="" className={styles.label}>TELEFONE</label>
-                                        <input type="text" className={styles.input} required />
-                                    </fieldset>
-
-                                    <fieldset className={styles.fieldset}>
-                                        <label htmlFor="" className={styles.label}>EMAIL</label>
-                                        <input type="text" className={styles.input} required />
-                                    </fieldset>
-
-                                    <fieldset className={styles.fieldset}>
-                                        <label htmlFor="" className={styles.label}>SENHA</label>
-                                        <input type="password" className={styles.input} required />
-                                    </fieldset> */}
 
 
-                                </ModalBody>
-                                <ModalFooter className={styles.footer_modal}>
-                                    {/* <Button className={`${styles.button} ${styles.fechar}`} color="danger" variant="light" onPress={onClose}>
-                                        Close
-                                    </Button>
-                                    <Button className={`${styles.button} ${styles.confirmar}`} color="primary" onPress={onClose}>
-                                        Action
-                                    </Button> */}
-                                </ModalFooter>
-                            </>
-                        )}
-                    </ModalContent>
-                </Modal>
-            </>
+
+
 
         </div>
     );

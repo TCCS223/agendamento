@@ -199,40 +199,55 @@
   
   
   /* MODAL */
-  
+  .closeButton {
+    color : pink
+  }
+
+  body.swal2-shown > [aria-hidden='true'] {
+    transition: 0.1s filter;
+    backdrop-filter: blur(10px);
+  }
+
   .modal {
-    position: fixed;
-    margin: 10px;
-   inset: 10%;
-   height: auto;
-    background-color: rgba(255, 29, 29, 0.7);
+position: relative;
+    width: 50%;
+    height: 50vh;
+    margin: auto;
+    background-color: rgba(255, 29, 55);
+    border: 2px solid black;
+    outline: none;
+border-radius: 20px;
+    z-index: 999;
+
+
+    /* transition: 0.5s ease-in; */
+    /* border: yellowgreen solid 14px; */
+  }
+
+  .content_modal{
+    position: absolute;
+    inset: 0;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(4px);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 999;
-    flex-direction: column;
-    border-radius: 50px;
-    /* transition: 0.5s ease-in; */
-    /* border: yellowgreen solid 14px; */
+   
   }
   
   .header_modal{
-    height: 50px;
-    width: 100%;
+
     background-color: yellow;
   }
   
-  
   .body_modal{
-    height: 250px;
-    width: 100%;
+
     background-color: blue;
   }
   
   .footer_modal{
-    height: 50px;
-    width: 100%;
+
     background-color: yellow;
   }
   
@@ -267,5 +282,18 @@
   
   
   
+  .swal2-container.swal2-backdrop-show {
+    backdrop-filter: blur(10px); /* Ajuste o valor de blur conforme necessário */
+  }
   
+  .blur-backdrop {
+    background: rgba(0, 0, 0, 0.4); /* Adiciona um fundo semitransparente */
+  }
   
+
+  .content_section .swal2-shown > [aria-hidden='true'] {
+    transition: 0.1s filter;
+    filter: blur(3px);
+  }
+
+ 

@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure } from "@nextui-org/react";
+
 import styles from './page.module.css'
 
 export default function modal() {
@@ -16,6 +17,8 @@ export default function modal() {
         <ModalContent>
           {(onClose) => (
             <>
+
+             
 
               <ModalHeader className={styles.header}>Modal Title</ModalHeader>
               <ModalBody className={styles.body}>
