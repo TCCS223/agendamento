@@ -296,4 +296,61 @@ border-radius: 20px;
     filter: blur(3px);
   }
 
- 
+ .modal_overlay{
+  position: fixed;
+inset: 0;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+
+  outline: none;
+
+  z-index: 999;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  backdrop-filter: blur(30px);
+ }
+
+ .modal{
+  width: 50%;
+  height: 50%;
+  background-color: white;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+ }
+
+ .btnClose{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+ }
+
+ .lorem{
+  height: 50%;
+  width: 100%;
+  background-color: rgba(59, 0, 0, 0.7);
+  margin: auto 0;
+ }
+
+ .mdi__close {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12z'/%3E%3C/svg%3E");
+  background-color: currentColor;
+  -webkit-mask-image: var(--svg);
+  mask-image: var(--svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.swal2-progress-steps .swal2-progress-step {
+  background-color: red; /* Alterar para a cor desejada */
+}
