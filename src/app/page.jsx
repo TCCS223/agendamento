@@ -41,8 +41,13 @@ export default function CadCliente() {
 
         const Consulta = () => {
         Swal.fire({
-           width: 1200,
+            width: 1200,
             confirmButtonText: 'Finalizar',
+            showCloseButton: 'true',
+            closeButtonHtml: '<button class="mdi--close"></button>',
+
+
+
             html: `
                 <body>
                 <div class="radioGroup">
