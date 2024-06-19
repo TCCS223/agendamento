@@ -354,3 +354,76 @@ inset: 0;
 .swal2-progress-steps .swal2-progress-step {
   background-color: red; /* Alterar para a cor desejada */
 }
+
+.body {
+  background-color: #222;
+  color: #fff;
+  font-family: sans-serif;
+}
+
+.container {
+  width: 500px;
+  margin: 100px auto;
+  padding: 20px;
+  background-color: #333;
+  border-radius: 10px;
+}
+
+.h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.option-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.option-group label {
+  margin-bottom: 5px;
+}
+
+.option-group input[type="radio"] {
+  margin-right: 5px;
+}
+
+.input-field {
+  margin-bottom: 20px;
+}
+
+.nput[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #444;
+  color: #fff;
+}
+
+.button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #5cb85c;
+  color: #fff;
+  cursor: pointer;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.th, .td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #666;
+}

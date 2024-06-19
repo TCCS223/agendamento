@@ -3,13 +3,16 @@
 import Swal from 'sweetalert2';
 
 import styles from './page.module.css';
+// import styles from './ModalComponent.module.css';
 
 import React from "react";
 import { useState } from 'react';
 import Link from "next/link";
 import modal from "./filtrage/page.jsx";
 import { input } from '@nextui-org/react';
-import withReactContent from 'sweetalert2-react-content'
+import withReactContent from 'sweetalert2-react-content';
+
+const MySwal = withReactContent(Swal);
 
 // import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure } from "@nextui-org/react";
 // import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, CloseButton, Button, useDisclosure} from "@nextui-org/react";
@@ -34,7 +37,31 @@ export default function CadCliente() {
     };
 
 
+        const showModal = () => {
+          MySwal.fire({
+            title: 'Custom Modal',
+            html: `
+              <div class="${styles.customModalContent}">
+                <div class="${styles.radioGroup}">
+            <input type="radio" id="option1" name="radiogroup1" value="Option 1">
+            <label for="option1">Option 1</label><br>
+            <input type="radio" id="option2" name="radiogroup1" value="Option 2">
+            <label for="option2">Option 2</label><br>
+            <input type="radio" id="option3" name="radiogroup1" value="Option 3">
+            <label for="option3">Option 3</label>
+                 </div>
+             <div class="${styles.buttonGroup}">
+                    <button id="actionButton">Click Me</button>
 
+              </div>
+             <div class="${styles.textareaGroup}">
+                <textarea rows="5" cols="30"></textarea>
+              </div>
+             </div>
+            `,
+            showConfirmButton: false
+          });
+        };
 
     const Pesquisar = () => {
         Swal.fire({
@@ -81,12 +108,68 @@ export default function CadCliente() {
 
     const Consulta = () => {
         Swal.fire({
-            width: 1200,
+           width: 1200,
             confirmButtonText: 'Finalizar',
             html: `
-                <div class="consulta">
+                <body>
+                <div class="container">
+                <h2>Pesquisa</h2>
 
+                <div class="options">
+                    <div class="option-group">
+                        <h3>Opções de Pesquisa</h3>
+                        <label>
+                            <input type="radio" name="option" value="nome"> Nome
+                        </label>
+                        <label>
+                            <input type="radio" name="option" value="cpf"> CPF
+                        </label>
+                    </div>
+                    <div class="option-group">
+                        <h3>Filtro</h3>
+                        <label>
+                            <input type="radio" name="filter" value="telefone"> Telefone
+                        </label>
+                        <label>
+                            <input type="radio" name="filter" value="email"> Email
+                        </label>
+                    </div>
+                    <div class="option-group">
+                        <h3>Situação</h3>
+                        <label>
+                            <input type="radio" name="situation" value="ativo"> Ativo
+                        </label>
+                        <label>
+                            <input type="radio" name="situation" value="inativo"> Inativo
+                        </label>
+                        <label>
+                            <input type="radio" name="situation" value="todos"> Todos
+                        </label>
+                    </div>
                 </div>
+
+                <div class="input-field">
+                    <input type="text" placeholder="Digite aqui">
+                </div>
+
+                <button>Pesquisar</button>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>CPF</th>
+                            <th>Telefone</th>
+                            <th>Email</th>
+                            <th>Situação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Resultados da pesquisa -->
+                    </tbody>
+                </table>
+            </div>
+            </body>
             `
         });
     }
@@ -104,7 +187,9 @@ export default function CadCliente() {
             </div>
 
             <Link href="/filtrage">pesquisars</Link>
-
+            <div>
+      
+    </div>
 
 
 
@@ -128,6 +213,7 @@ export default function CadCliente() {
                             </div>
                             <button onClick={closeModal} class={styles.mdi__close}>
                             </button>
+                            <button onClick={showModal}>Open Modal</button>
                         </div>
                     </div>
                 )}
