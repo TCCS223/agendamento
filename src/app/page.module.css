@@ -209,14 +209,14 @@
   }
 
   .modal {
-position: relative;
+    position: relative;
     width: 50%;
     height: 50vh;
     margin: auto;
     background-color: rgba(255, 29, 55);
     border: 2px solid black;
     outline: none;
-border-radius: 20px;
+    border-radius: 20px;
     z-index: 999;
 
 

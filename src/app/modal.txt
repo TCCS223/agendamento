@@ -43,3 +43,112 @@
             <Button onPress={onOpen}>Open Modal</Button>
 
                 const {isOpen, onOpen, onOpenChange} = useDisclosure();
+
+
+
+
+
+
+
+                
+            <div>
+                <button onClick={openModal}>Open Modal</button>
+
+                {/*Este codigo logo abaixo só será mostrado caso isOpen seja true*/}
+
+                {isOpen && (
+                    <div className={styles.modal_overlay} onClick={handleOverlayClick} >
+
+                        {/* <button onClick={closeModal} className={styles.btnClose}>Close</button> */}
+                        <div className={styles.modal}>
+                            {/* <button onClick={closeModal} className={styles.btnClose}>Close</button> */}
+
+                            <div className={styles.lorem}>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi eligendi libero corrupti ullam, amet voluptate perferendis repudiandae optio distinctio aperiam, aspernatur inventore repellat? Minima ut iste sapiente cum ex optio.
+                            </div>
+                            <button onClick={closeModal} class={styles.mdi__close}>
+                            </button>
+                        </div>
+                    </div>
+                )}
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                    const showModal = () => {
+          MySwal.fire({
+            title: 'Custom Modal',
+            html: `
+              <div class="${styles.customModalContent}">
+                <div class="${styles.radioGroup}">
+            <input type="radio" id="option1" name="radiogroup1" value="Option 1">
+            <label for="option1">Option 1</label><br>
+            <input type="radio" id="option2" name="radiogroup1" value="Option 2">
+            <label for="option2">Option 2</label><br>
+            <input type="radio" id="option3" name="radiogroup1" value="Option 3">
+            <label for="option3">Option 3</label>
+                 </div>
+             <div class="${styles.buttonGroup}">
+                    <button id="actionButton">Click Me</button>
+
+              </div>
+             <div class="${styles.textareaGroup}">
+                <textarea rows="5" cols="30"></textarea>
+              </div>
+             </div>
+            `,
+            showConfirmButton: false
+          });
+        };
+
+    const Pesquisar = () => {
+        Swal.fire({
+            width: 1200,
+            title: 'Error!',
+            text: 'japones safado',
+            icon: 'success',
+            // confirmButtonText: 'ok',
+            timer: 5000,
+            buttons: false,
+            timerProgressBar: 'true',
+            // showCloseButton: "true",
+            backdrop: `
+            rgba(0,0,0,0.8)   
+            `,
+            customClass: {
+                filter: 'my-swal',
+            }
+        });
+    }
+
+    const Novo = () => {
+        Swal.fire({
+            width: 1200,
+            title: 'Error!',
+            text: 'Do you want to continue',
+            icon: 'error',
+            confirmButtonText: 'ok',
+            html:
+                '<input id="swal-input1">' +
+                '<input id="swal-input2" >',
+            input: "email",
+            inputLabel: "Your email address",
+            inputPlaceholder: "Enter your email address",
+            showCloseButton: "true",
+            backdrop: `
+            rgba(56,79,126,0.8)   
+            `,
+            customClass: {
+                filter: 'my-swal'
+            }
+        });
+    }

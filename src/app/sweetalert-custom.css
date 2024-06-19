@@ -1,0 +1,208 @@
+/* .customModalContent {
+    font-family: Arial, sans-serif;
+    text-align: left;
+    background-color: yellowgreen;
+  }
+  
+  .radioGroup {
+    margin-bottom: 15px;
+    color: #ffffff;
+  }
+  
+  .radioGroup input {
+    margin-right: 10px;
+  }
+  
+  .buttonGroup {
+    margin-bottom: 15px;
+  }
+  
+  .buttonGroup button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .buttonGroup button:hover {
+    background-color: #45a049;
+  }
+  
+  .textareaGroup textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  } */
+
+  /* .radioGroup {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .radioGroup h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 25px;
+    font-weight: bold;
+  }
+  
+  .options {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    
+  }
+  
+  .option-group h3 {
+    color: #444;
+    margin-bottom: 10px;
+    text-align: center;
+    display: flex;
+    
+  }
+  
+  .option-group label {
+    display: block;
+    margin-bottom: 5px;
+    
+    color: #555;
+    align-items: start;
+    text-align: start;
+  }
+  
+  .input-field {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .input-field input {
+    padding: 10px;
+    width: 80%;
+    font-size: 1rem;
+  }
+  
+  .radioGroup button {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 15px;
+    font-size: 1rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .radioGroup table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .radioGroup th, .radioGroup td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  .radioGroup th {
+    background-color: #f2f2f2;
+    color: #333;
+  } */
+
+  .radioGroup {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .radioGroup h2 {
+    color: #333;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 3%;
+    font-weight: bold;
+  }
+  
+  .options {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    margin-left: 3%;
+  }
+  
+  .option-group {
+    flex: 1;
+    padding: 0 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-left: 10%;
+  }
+
+  .option-group-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    align-items: start;
+    width: 100%;
+    align-items: center;
+    
+  }
+  
+  .option-group h3 {
+    color: #444;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .option-group label {
+    display: inline-block;
+    margin-right: 10px;
+    color: #555;
+  }
+  
+  .input-field {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .input-field input {
+    padding: 10px;
+    width: 80%;
+    font-size: 1rem;
+  }
+  
+  .radioGroup button {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .radioGroup table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .radioGroup th, .radioGroup td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  .radioGroup th {
+    background-color: #f2f2f2;
+    color: #333;
+  }
