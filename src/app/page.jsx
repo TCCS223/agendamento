@@ -11,11 +11,9 @@ import Link from "next/link";
 import modal from "./filtrage/page.jsx";
 import { input } from '@nextui-org/react';
 import withReactContent from 'sweetalert2-react-content';
+import { Icon } from '@chakra-ui/react';
 // import 'sweetalert2/dist/sweetalert2.min.css'; // Importando o CSS padrão do SweetAlert2
 // import '../styles/sweetalert-custom.css'; // Caminho para o seu arquivo CSS personalizado
-
-
-
 // import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure } from "@nextui-org/react";
 // import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, CloseButton, Button, useDisclosure} from "@nextui-org/react";
 
@@ -43,51 +41,61 @@ export default function CadCliente() {
         Swal.fire({
             width: 1200,
             confirmButtonText: 'Finalizar',
+            confirmButtonColor: '#FF9D00',
             showCloseButton: 'true',
             closeButtonHtml: '<button class="mdi--close"></button>',
-
-
-
+            icon: 'success',
             html: `
                 <body>
                 <div class="radioGroup">
                 <h2>Pesquisa</h2>
+                <hr class="hr2">
 
                 <div class="options">
                     <div class="option-group">
                         <h3>Opções de Pesquisa</h3>
                         <div class="option-group-grid">
-                        <label>
+                        <label class="label">
                             <input type="radio" name="option" value="nome"> Nome
                         </label>
-                        <label>
+                        <label class="label">
                             <input type="radio" name="option" value="cpf"> CPF
                         </label>
-                        <label>
+                        <label class="label">
                             <input type="radio" name="option" value="telefone"> Telefone
                         </label>
-                        <label>
+                        <label class="label">
                             <input type="radio" name="option" value="email"> Email
                         </label>
                         </div>
                     </div>
+
+                    <hr class="hr">
+
                     <div class="option-group">
                         <h3>Filtro</h3>
-                        <label>
+                        <div class="option-group-grid-filtro">
+                        <label class="label">
                             <input type="radio" name="filter" value="telefone"> Telefone
                         </label>
-                        <label>
+                        <label class="label">
                             <input type="radio" name="filter" value="email"> Email
                         </label>
+                        </div>
                     </div>
+
+                    <hr class="hr">
+
                     <div class="option-group">
                         <h3>Situação</h3>
-                        <label>
+                        <div class="option-group-grid-situacao">
+                        <label class="label">
                             <input type="radio" name="situation" value="ativo"> Ativo
                         </label>
-                        <label>
+                        <label class="label">
                             <input type="radio" name="situation" value="inativo"> Inativo
                         </label>
+                        </div>
                     </div>
                 </div>
 
